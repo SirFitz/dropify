@@ -23,7 +23,7 @@ function Dropify(element, options) {
         showErrors: true,
         errorTimeout: 3000,
         errorsPosition: 'overlay',
-        imgFileExtensions: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+        imgFileExtensions: ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'svg', 'webp'],
         maxFileSizePreview: "5M",
         allowedFormats: ['portrait', 'square', 'landscape'],
         allowedFileExtensions: ['*'],
@@ -384,7 +384,7 @@ Dropify.prototype.isTouchDevice = function()
  */
 Dropify.prototype.getFileType = function()
 {
-    return this.file.name.split('.').pop().toLowerCase();
+    return this.file.type.split('/').pop().toLowerCase();
 };
 
 /**
